@@ -3,7 +3,8 @@ import { DialogInterface } from '@/types/models/Dialog';
 export const dialogs: DialogInterface[] = [
   {
     id: 1,
-    user_url: 'https://example.com/avatars/user1.png',
+    avatar_url:
+      'https://img.freepik.com/free-photo/expressive-redhead-bearded-man_176420-32277.jpg?semt=ais_hybrid&w=740&q=80',
     sender_name: 'Алексей',
     last_message: 'Привет, как продвигается проект?',
     is_verified: true,
@@ -12,7 +13,7 @@ export const dialogs: DialogInterface[] = [
   },
   {
     id: 2,
-    user_url: 'https://example.com/avatars/user2.png',
+    avatar_url: 'https://i.pinimg.com/736x/50/03/3b/50033bac49f341a161c455281d636bb1.jpg',
     sender_name: 'Мария',
     last_message: 'Созвонимся вечером?',
     is_verified: false,
@@ -21,7 +22,7 @@ export const dialogs: DialogInterface[] = [
   },
   {
     id: 3,
-    user_url: 'https://example.com/avatars/user3.png',
+    avatar_url: 'https://kulturologia.ru/files/u17904/179046338.jpg',
     sender_name: 'Дмитрий',
     last_message: 'Я скинул тебе документы',
     is_verified: true,
@@ -30,7 +31,7 @@ export const dialogs: DialogInterface[] = [
   },
   {
     id: 4,
-    user_url: 'https://example.com/avatars/user4.png',
+    avatar_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2lCU1tXsvbI8iDnu1ZgN1W7OWnTOYUz1M9A&s',
     sender_name: 'Ольга',
     last_message: 'Спасибо, всё получила 👍',
     is_verified: false,
@@ -39,7 +40,8 @@ export const dialogs: DialogInterface[] = [
   },
   {
     id: 5,
-    user_url: 'https://example.com/avatars/user5.png',
+    avatar_url:
+      'https://media.istockphoto.com/id/1438547233/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BB%D1%8E%D0%B4%D0%B5%D0%B9-%D1%82%D0%BE%D0%BB%D0%BF%D1%8F%D1%82%D1%81%D1%8F-%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D0%B0-%D0%B3%D1%80%D0%B0%D0%B6%D0%B4%D0%B0%D0%BD-%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BB%D1%8E%D0%B4%D0%B5%D0%B9-%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%BE%D0%B9-%D1%80%D1%8B%D0%BD%D0%BE%D0%BA-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BD%D0%B8%D0%BA%D0%B8-%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0-%D1%81%D0%B8%D0%BB%D1%83%D1%8D%D1%82%D1%8B.jpg?s=612x612&w=0&k=20&c=UB1t5vThlrJo26KP9zMJSB3S6ZF4inplw6s0ctxsNAo=',
     sender_name: 'Новости IT',
     last_message: 'Вышел релиз Node.js 23!',
     is_verified: true,

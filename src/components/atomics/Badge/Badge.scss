@@ -1,0 +1,33 @@
+.badge {
+  padding: 1px;
+
+  min-width: 18px;
+  max-width: fit-content;
+
+  border-radius: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--m {
+    padding: 4px 12px;
+  }
+
+  // Colors
+  &--success {
+    background-color: var(--color-success);
+
+    span {
+      color: var(--color-white);
+    }
+  }
+
+  &--secondary {
+    background-color: rgba(61, 112, 184, 0.6);
+
+    span {
+      color: var(--color-black);
+    }
+  }
+}
