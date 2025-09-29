@@ -1,4 +1,4 @@
-import { MessageType } from '@/types/MessageType';
+type MessageType = 'income' | 'outcome';
 
 export interface MessageProps {
   content: string;

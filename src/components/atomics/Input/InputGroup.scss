@@ -1,0 +1,39 @@
+.inputGroup {
+  gap: 16px;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  &__input {
+    width: 100%;
+
+    input {
+      border: none;
+      outline: none;
+
+      background-color: transparent;
+    }
+  }
+
+  &--header {
+    border-radius: 22px;
+
+    padding: 8px 16px;
+
+    background-color: var(--color-tertiary);
+
+    height: 40px;
+  }
+
+  &--chat {
+    border-radius: 12px;
+
+    padding: 16px 16px;
+
+    background-color: var(--color-primary);
+
+    height: 56px;
+  }
+}

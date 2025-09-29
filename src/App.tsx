@@ -4,6 +4,7 @@ import { Dialog } from '@/components/compounds/Dialog';
 import { Button } from '@/components/atomics/Button';
 import { dialogs } from '@/mocks/dialogs';
 import { Message } from './components/atomics/Message';
+import InputGroup from './components/atomics/Input/InputGroup';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,7 +36,10 @@ function App() {
         content="А я забрала котам игрушка с вайлдбериз, теперь ходят радостные, улыбаются! =))))"
         time="16:03"
       />
-      <Message messageType="income" content="Ну ты вообде капец!" time="16:04" />
+      <Message messageType="income" content="Ну ты вообще капец!" time="16:04" />
+
+      <InputGroup InputGroupType="header" placeholder="Поиск" leftbutton />
+      <InputGroup InputGroupType="chat" placeholder="Напишите сообщение" leftbutton rightbutton />
     </>
   );
 }
