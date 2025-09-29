@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Dialog } from '@/components/compounds/Dialog';
 import { Button } from '@/components/atomics/Button';
 import { dialogs } from '@/mocks/dialogs';
+import { Message } from './components/atomics/Message';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,14 +28,14 @@ function App() {
 
       <Button size="m" icon="search" onClick={onClick} />
 
-      {/* <Input ...props />
-      <Input ..props /> */}
-
-      <div className="message-list message--income">
-        {/* <Message message={message} text="Привет" time="16:00" />
-          message.text, message.last_updated_at
-        <Message /> */}
-      </div>
+      <Message messageType="income" content="Привет" time="16:00" />
+      <Message messageType="outcome" content="Привет, я сейчас ем йогурт он очень вкусныЙ!" time="16:01" />
+      <Message
+        messageType="outcome"
+        content="А я забрала котам игрушка с вайлдбериз, теперь ходят радостные, улыбаются! =))))"
+        time="16:03"
+      />
+      <Message messageType="income" content="Ну ты вообде капец!" time="16:04" />
     </>
   );
 }
