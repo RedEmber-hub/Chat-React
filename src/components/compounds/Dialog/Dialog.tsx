@@ -1,5 +1,5 @@
-import { Avatar } from '../Avatar';
-import { Badge } from '../Badge';
+import { Avatar } from '@/components/atomics/Avatar';
+import { Badge } from '@/components/atomics/Badge';
 import { DialogProps } from './Dialog.types';
 
 import './Dialog.scss';

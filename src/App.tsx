@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { Dialog } from '@/components/atomics/Dialog';
+import { Dialog } from '@/components/compounds/Dialog';
 import { Button } from '@/components/atomics/Button';
 import { dialogs } from '@/mocks/dialogs';
 
