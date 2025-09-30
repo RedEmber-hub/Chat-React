@@ -4,11 +4,13 @@ import { Dialog } from '@/components/compounds/Dialog';
 import { Button } from '@/components/atomics/Button';
 import { dialogs } from '@/mocks/dialogs';
 import { Message } from './components/atomics/Message';
-import { Input } from './components/atomics/Input';
+
 import { messages } from './mocks/messages';
+import { InputField } from './components/atomics/InputField';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     // Emulate api request
@@ -32,8 +34,25 @@ function App() {
         return <Message messageProp={message} key={message.id} />;
       })}
 
-      <Input placeholder="Поиск" leftIcon="search" size="s" color="secondary" />
-      <Input placeholder="Напишите сообщение" leftIcon="emoji-icon" rightIcon="send-icon" size="m" color="primary" />
+      <InputField size="s" color="secondary">
+        <InputField.Slot>
+          <Button size="s" icon="search" />
+        </InputField.Slot>
+
+        <InputField.Field value={search} onChangeValue={setSearch} />
+      </InputField>
+
+      <InputField size="m" color="primary">
+        <InputField.Slot>
+          <Button size="s" icon="emoji-icon" />
+        </InputField.Slot>
+
+        <InputField.Field value={search} onChangeValue={setSearch} />
+
+        <InputField.Slot>
+          <Button size="s" icon="send-icon" />
+        </InputField.Slot>
+      </InputField>
     </>
   );
 }
