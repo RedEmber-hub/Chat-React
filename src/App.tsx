@@ -4,7 +4,8 @@ import { Dialog } from '@/components/compounds/Dialog';
 import { Button } from '@/components/atomics/Button';
 import { dialogs } from '@/mocks/dialogs';
 import { Message } from './components/atomics/Message';
-import InputGroup from './components/atomics/Input/InputGroup';
+import { Input } from './components/atomics/Input';
+import { messages } from './mocks/messages';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,19 +28,12 @@ function App() {
         return <Dialog dialogProp={dialog} key={dialog.id} isLoading={isLoading} />;
       })}
 
-      <Button size="m" icon="search" onClick={onClick} />
+      {messages.map((message) => {
+        return <Message messageProp={message} key={message.id} />;
+      })}
 
-      <Message messageType="income" content="Привет" time="16:00" />
-      <Message messageType="outcome" content="Привет, я сейчас ем йогурт он очень вкусныЙ!" time="16:01" />
-      <Message
-        messageType="outcome"
-        content="А я забрала котам игрушка с вайлдбериз, теперь ходят радостные, улыбаются! =))))"
-        time="16:03"
-      />
-      <Message messageType="income" content="Ну ты вообще капец!" time="16:04" />
-
-      <InputGroup InputGroupType="header" placeholder="Поиск" leftbutton />
-      <InputGroup InputGroupType="chat" placeholder="Напишите сообщение" leftbutton rightbutton />
+      <Input placeholder="Поиск" leftIcon="search" size="s" color="secondary" />
+      <Input placeholder="Напишите сообщение" leftIcon="emoji-icon" rightIcon="send-icon" size="m" color="primary" />
     </>
   );
 }

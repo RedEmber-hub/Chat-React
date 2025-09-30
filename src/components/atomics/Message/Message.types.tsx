@@ -1,7 +1,5 @@
-type MessageType = 'income' | 'outcome';
+import { MessageInterface } from '@/types/models/Message';
 
 export interface MessageProps {
-  content: string;
-  time: string;
-  messageType: MessageType;
+  messageProp: MessageInterface;
 }
