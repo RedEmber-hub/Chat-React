@@ -6,6 +6,16 @@
   display: inline-flex;
   flex-direction: column;
 
+  &__attachment {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      max-width: 100%; /* не шире родителя */
+      height: auto;
+    }
+  }
+
   &__status {
     display: flex;
     align-items: center;
