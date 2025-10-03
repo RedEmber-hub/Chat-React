@@ -1,0 +1,39 @@
+.sidebar {
+  width: 364px;
+  gap: 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: all var(--transition-speed) var(--transition-function);
+
+  &__search {
+    width: 100%;
+    margin-left: 16px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+
+    padding: 8px 16px;
+  }
+
+  &__minimized-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  &--minimized {
+    width: 80px;
+
+    overflow: hidden;
+
+    .sidebar__search {
+      display: none;
+    }
+  }
+}

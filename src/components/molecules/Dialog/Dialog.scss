@@ -21,6 +21,10 @@
     width: 100%;
   }
 
+  &__message {
+    max-width: 249px;
+  }
+
   &__header,
   &__footer {
     .skeleton {

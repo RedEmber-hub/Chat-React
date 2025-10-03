@@ -18,7 +18,7 @@ html {
   margin-right: calc(-1 * (100vw - 100%)) !important;
 }
 
-#app {
+#root {
   height: 100dvh;
   background-color: var(--color-primary);
 
@@ -34,6 +34,13 @@ video {
 
 svg {
   display: flex;
+}
+
+//троеточие после текста
+.text-truncated {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cursor-pointer {

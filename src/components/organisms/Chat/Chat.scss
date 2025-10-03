@@ -1,0 +1,55 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  background-color: var(--color-secondary);
+
+  &__content {
+    padding: 16px 24px;
+
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  &__message-list {
+    gap: 16px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__message-groups {
+    gap: 16px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__message-group-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__message-item {
+    display: flex;
+
+    &--income {
+      justify-content: flex-start;
+    }
+
+    &--outcome {
+      justify-content: flex-end;
+    }
+  }
+
+  &__footer {
+    height: 80px;
+
+    padding: 0px 24px 24px 24px;
+  }
+}
