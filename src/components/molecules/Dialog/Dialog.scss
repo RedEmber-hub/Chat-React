@@ -22,7 +22,7 @@
   }
 
   &__message {
-    max-width: 249px;
+    max-width: 235px;
   }
 
   &__header,
@@ -44,6 +44,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    gap: 8px;
   }
 
   &__title-icon {
