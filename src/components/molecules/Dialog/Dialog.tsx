@@ -3,6 +3,7 @@ import { Badge } from '@/components/atoms/Badge';
 import { DialogProps } from './Dialog.types';
 
 import './Dialog.scss';
+import { formatDateTime } from '@/Data/utils/dateTimeFormat';
 
 export default function Dialog({ dialogProp, isLoading }: DialogProps) {
   return (
@@ -41,7 +42,7 @@ export default function Dialog({ dialogProp, isLoading }: DialogProps) {
               </div>
 
               <div className="dialog__time">
-                <time className="caption icon">{dialogProp.last_updated_at}</time>
+                <time className="caption icon">{formatDateTime(dialogProp.last_updated_at)}</time>
               </div>
             </div>
 
