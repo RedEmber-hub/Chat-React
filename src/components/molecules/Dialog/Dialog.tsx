@@ -3,9 +3,14 @@ import { Badge } from '@/components/atoms/Badge';
 import { DialogProps } from './Dialog.types';
 
 import './Dialog.scss';
-import { formatDateTime } from '@/Data/utils/dateTimeFormat';
+import { formatDateTime } from '@/Data/utils/DateTimeFormat';
 
 export default function Dialog({ dialogProp, isLoading }: DialogProps) {
+  // функция для обработки клика по диалогу
+  function handleDialogClick() {
+    console.log(dialogProp.id);
+  }
+
   return (
     <>
       {isLoading ? (
@@ -24,7 +29,7 @@ export default function Dialog({ dialogProp, isLoading }: DialogProps) {
           </div>
         </div>
       ) : (
-        <div className="dialog cursor-pointer">
+        <div className="dialog cursor-pointer" onClick={handleDialogClick}>
           <Avatar size="m" src={dialogProp.avatar_url} user_name={dialogProp.sender_name} />
 
           <div className="dialog__content">
