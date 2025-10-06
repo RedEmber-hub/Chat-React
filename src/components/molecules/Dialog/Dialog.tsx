@@ -48,7 +48,7 @@ export default function Dialog({ dialogProp, isLoading }: DialogProps) {
 
             <div className="dialog__footer">
               <div className="dialog__message">
-                <span className="text icon">{dialogProp.last_message}</span>
+                <p className="text icon text-truncated">{dialogProp.last_message}</p>
               </div>
 
               <Badge size="s" color="success" text={dialogProp.unread_count} />
