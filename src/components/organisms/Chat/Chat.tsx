@@ -1,6 +1,5 @@
 import './Chat.scss';
 import { ChatHeader } from '@/components/molecules/ChatHeader';
-import { InputField } from '@/components/atoms/InputField';
 
 // TODO: удалить messages и dialogs
 import { dialogs } from '@/mocks/dialogs';

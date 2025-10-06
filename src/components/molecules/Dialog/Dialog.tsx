@@ -51,7 +51,7 @@ export default function Dialog({ dialogProp, isLoading }: DialogProps) {
                 <p className="text icon text-truncated">{dialogProp.last_message}</p>
               </div>
 
-              <Badge size="s" color="success" text={dialogProp.unread_count} />
+              {dialogProp.unread_count > 0 && <Badge size="s" color="success" text={dialogProp.unread_count} />}
             </div>
           </div>
         </div>
