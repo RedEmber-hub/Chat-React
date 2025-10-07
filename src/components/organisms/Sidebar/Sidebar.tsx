@@ -3,14 +3,21 @@ import './Sidebar.scss';
 import { InputField } from '@/components/atoms/InputField';
 import { SidebarProps } from './Sidebar.type';
 import { Dialog } from '@/components/molecules/Dialog';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import classNames from 'classnames';
+import { Icon } from '@/components/atoms/Icon';
 
-export default function Sidebar({ dialogs }: SidebarProps) {
+export default function Sidebar({ dialogs, onClickDialog }: SidebarProps) {
   // переключатель
   const [isMinimize, setIsMinimize] = useState(false);
   // поиск
   const [search, setSearch] = useState('');
+
+  const filteredDialogs = useMemo(() => {
+    return dialogs.filter((dialog) => {
+      return dialog.sender_name.toLowerCase().includes(search.toLowerCase());
+    });
+  }, [dialogs, search]);
 
   const className = classNames({
     sidebar: true,
@@ -19,12 +26,6 @@ export default function Sidebar({ dialogs }: SidebarProps) {
 
   function toggleMinimize() {
     setIsMinimize(!isMinimize);
-  }
-
-  function filteredDialogs() {
-    return dialogs.filter((dialog) => {
-      return dialog.sender_name.toLowerCase().includes(search.toLowerCase());
-    });
   }
 
   return (
@@ -37,7 +38,7 @@ export default function Sidebar({ dialogs }: SidebarProps) {
         <div className="sidebar__search">
           <InputField size="s" color="secondary">
             <InputField.Slot>
-              <img src="/icons/search.svg" alt="иконка лупы" />
+              <Icon name="search" />
             </InputField.Slot>
 
             <InputField.Field placeholder="Поиск" value={search} onChangeValue={setSearch} />
@@ -46,8 +47,8 @@ export default function Sidebar({ dialogs }: SidebarProps) {
       </div>
 
       <div className="dialog-list">
-        {filteredDialogs().map((dialog) => {
-          return <Dialog dialogProp={dialog} key={dialog.id} />;
+        {filteredDialogs.map((dialog) => {
+          return <Dialog dialogProp={dialog} key={dialog.id} onClick={onClickDialog} />;
         })}
       </div>
     </aside>

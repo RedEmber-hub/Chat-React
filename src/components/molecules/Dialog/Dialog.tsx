@@ -3,14 +3,10 @@ import { Badge } from '@/components/atoms/Badge';
 import { DialogProps } from './Dialog.types';
 
 import './Dialog.scss';
-import { formatDateTime } from '@/Data/utils/DateTimeFormat';
+import { formatDateTime } from '@/utils/dateTimeFormat';
+import { Icon } from '@/components/atoms/Icon';
 
-export default function Dialog({ dialogProp, isLoading }: DialogProps) {
-  // функция для обработки клика по диалогу
-  function handleDialogClick() {
-    console.log(dialogProp.id);
-  }
-
+export default function Dialog({ dialogProp, isLoading, onClick }: DialogProps) {
   return (
     <>
       {isLoading ? (
@@ -29,7 +25,7 @@ export default function Dialog({ dialogProp, isLoading }: DialogProps) {
           </div>
         </div>
       ) : (
-        <div className="dialog cursor-pointer" onClick={handleDialogClick}>
+        <div className="dialog cursor-pointer" onClick={() => onClick?.(dialogProp.id)}>
           <Avatar size="m" src={dialogProp.avatar_url} user_name={dialogProp.sender_name} />
 
           <div className="dialog__content">
@@ -41,7 +37,7 @@ export default function Dialog({ dialogProp, isLoading }: DialogProps) {
 
                 {dialogProp.is_verified && (
                   <div className="dialog__icon">
-                    <img src="/icons/verified.svg" alt="галочка верификации" />
+                    <Icon name="verified" />
                   </div>
                 )}
               </div>

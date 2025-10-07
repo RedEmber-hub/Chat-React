@@ -1,3 +1,4 @@
+import { Icon } from '../Icon';
 import './Button.scss';
 import { ButtonProps } from './Button.types';
 import classNames from 'classnames';
@@ -10,7 +11,7 @@ export default function Button({ size, icon, onClick }: ButtonProps) {
 
   return (
     <button className={className} onClick={onClick}>
-      <img src={`/icons/${icon}.svg`} alt={`Иконка: ${icon}`} />
+      <Icon name={icon} />
     </button>
   );
 }

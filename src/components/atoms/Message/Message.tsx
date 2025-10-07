@@ -2,6 +2,7 @@ import { StatusType } from '@/types/models/Message';
 import './Message.scss';
 import { MessageProps } from './Message.types';
 import classNames from 'classnames';
+import { Icon } from '../Icon';
 
 export default function Message({ messageProp }: MessageProps) {
   const className = classNames({
@@ -33,7 +34,7 @@ export default function Message({ messageProp }: MessageProps) {
         </div>
 
         <div className="message__status">
-          <img src={`/icons/${statusMap[messageProp.status]}-icon.svg`} alt="Иконка статуса" />
+          <Icon name={`${statusMap[messageProp.status]}-icon`} size={14} />
         </div>
       </div>
     </div>
