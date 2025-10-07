@@ -1,5 +1,6 @@
 .sidebar {
   width: 364px;
+  min-width: 364px;
   gap: 8px;
 
   display: flex;
@@ -29,6 +30,7 @@
 
   &--minimized {
     width: 80px;
+    min-width: 80px;
 
     overflow: hidden;
 

@@ -2,6 +2,8 @@ import { dialogs } from '@/mocks/dialogs';
 import { Sidebar } from './components/organisms/Sidebar';
 import { Chat } from './components/organisms/Chat';
 
+import { useNavigate } from 'react-router';
+
 function App() {
   /* 
     Домашнее задание:
@@ -12,9 +14,10 @@ function App() {
     4) Доработать компонент Аватарки, для случая, когда нет аватарки пользователя, чтобы брались инициалы у sender_name
     5) Создать компонент Panel, в котором в дальнейшем будет отображаться фильтрация диалогов
   */
+  const navigate = useNavigate();
 
   function handleClickDialog(id: number) {
-    console.log(id);
+    navigate(`/chat/${id}`);
   }
 
   return (
