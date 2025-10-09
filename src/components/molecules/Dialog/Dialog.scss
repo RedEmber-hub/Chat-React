@@ -67,4 +67,11 @@
     // 56px - высота sidebar__actions + 8px gap между sidebar__actions и dialog-list
     height: calc(100% - 64px);
   }
+
+  &--active {
+    background-color: #e8f3ff; /* мягкий голубой фон */
+    border-left: 3px solid #1a73e8; /* акцентная синяя линия */
+    color: #1a73e8; /* цвет текста/иконки */
+    font-weight: 600; /* немного выделяем текст */
+  }
 }

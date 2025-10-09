@@ -5,8 +5,22 @@ import { DialogProps } from './Dialog.types';
 import './Dialog.scss';
 import { formatDateTime } from '@/utils/dateTimeFormat';
 import { Icon } from '@/components/atoms/Icon';
+import classNames from 'classnames';
+import { useLocation } from 'react-router';
 
 export default function Dialog({ dialogProp, isLoading, onClick }: DialogProps) {
+  const location = useLocation();
+
+  function isActive(id: number, pathname: string) {
+    return pathname === `/chat/${id}`;
+  }
+
+  const className = classNames({
+    dialog: true,
+    'cursor-pointer': true,
+    'dialog--active': isActive(dialogProp.id, location.pathname),
+  });
+
   return (
     <>
       {isLoading ? (
@@ -25,7 +39,7 @@ export default function Dialog({ dialogProp, isLoading, onClick }: DialogProps) 
           </div>
         </div>
       ) : (
-        <div className="dialog cursor-pointer" onClick={() => onClick?.(dialogProp.id)}>
+        <div className={className} onClick={() => onClick?.(dialogProp.id)}>
           <Avatar size="m" src={dialogProp.avatar_url} user_name={dialogProp.sender_name} />
 
           <div className="dialog__content">
