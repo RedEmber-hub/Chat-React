@@ -3,9 +3,8 @@ import { DialogInterface } from '@/types/models/Dialog';
 export const dialogs: DialogInterface[] = [
   {
     id: 1,
-    avatar_url:
-      'https://img.freepik.com/free-photo/expressive-redhead-bearded-man_176420-32277.jpg?semt=ais_hybrid&w=740&q=80',
-    sender_name: 'Алексей',
+    avatar_url: '',
+    sender_name: 'Алексей Михайлович',
     last_message: 'Привет, как продвигается проект?',
     is_verified: true,
     last_updated_at: '2025-09-23T14:35:00Z',
@@ -32,7 +31,7 @@ export const dialogs: DialogInterface[] = [
   {
     id: 4,
     avatar_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2lCU1tXsvbI8iDnu1ZgN1W7OWnTOYUz1M9A&s',
-    sender_name: 'Ольга',
+    sender_name: 'Ольга Маслова',
     last_message: 'Спасибо, всё получила 👍',
     is_verified: false,
     last_updated_at: '2025-09-23T10:40:00Z',

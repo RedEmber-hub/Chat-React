@@ -21,6 +21,21 @@
     min-height: 48px;
   }
 
+  &--initial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    background-color: #5dade2;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); /* легкая тень для объёма */
+
+    font-weight: 600;
+    border-radius: 50%;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
   .skeleton {
     border-radius: 100px;
 
