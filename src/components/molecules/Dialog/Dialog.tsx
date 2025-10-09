@@ -6,19 +6,15 @@ import './Dialog.scss';
 import { formatDateTime } from '@/utils/dateTimeFormat';
 import { Icon } from '@/components/atoms/Icon';
 import classNames from 'classnames';
-import { useLocation } from 'react-router';
+import { useMatch } from 'react-router';
 
 export default function Dialog({ dialogProp, isLoading, onClick }: DialogProps) {
-  const location = useLocation();
-
-  function isActive(id: number, pathname: string) {
-    return pathname === `/chat/${id}`;
-  }
+  const match = useMatch('/chat/:id');
 
   const className = classNames({
     dialog: true,
     'cursor-pointer': true,
-    'dialog--active': isActive(dialogProp.id, location.pathname),
+    'dialog--active': String(dialogProp.id) === match?.params?.id,
   });
 
   return (
