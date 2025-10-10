@@ -3,8 +3,13 @@ import { Message } from '@/components/atoms/Message';
 import { messages } from '@/mocks/messages';
 
 import './ChatContent.scss';
+import { useParams } from 'react-router';
+import classNames from 'classnames';
 
 export default function ChatContent() {
+  // достаёт id из url для выборки нужного чата
+  const { id } = useParams();
+
   return (
     <div className="chat__content">
       <div className="chat__message-list">
@@ -15,30 +20,22 @@ export default function ChatContent() {
             <Badge size="m" color="secondary" text="Сегодня" />
           </div>
 
-          <div className="chat__message-item chat__message-item--income">
-            {/* <!-- компонент сообщения друга --> */}
+          {/* рендер сообщений в зависимости от id диалога (ключа) */}
+          {messages[Number(id)]?.map((message) => {
+            const className = classNames({
+              'chat__message-item': true,
+              'chat__message-item--income': message.income === true,
+              'chat__message-item--outcome': message.income === false,
+            });
 
-            {/* 
-              click by 1 chat = .../chat/1
+            return (
+              <div key={message.id} className={className}>
+                <Message messageProp={message} />
+              </div>
+            );
+          })}
 
-              1: [{}, {}, {}]
-
-              messages.map((message) => {
-                return (
-                  <div className="chat__message-item chat__message-item--income">
-                    <Message messageProp={message} />
-                  </div>
-                  )
-              })
-            
-            */}
-            <Message messageProp={messages[1][0]} />
-          </div>
-
-          <div className="chat__message-item chat__message-item--outcome">
-            {/* <!-- Компонент моего сообщения --> */}
-            <Message messageProp={messages[2][0]} />
-          </div>
+          <div className="chat__message-item chat__message-item--outcome"></div>
         </div>
       </div>
     </div>

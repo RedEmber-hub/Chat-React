@@ -10,7 +10,7 @@ import { Icon } from '@/components/atoms/Icon';
 export default function Sidebar({ dialogs, onClickDialog }: SidebarProps) {
   // переключатель
   const [isMinimize, setIsMinimize] = useState(false);
-  // поиск
+  // поиск или фильтрация по имени
   const [search, setSearch] = useState('');
 
   const filteredDialogs = useMemo(() => {

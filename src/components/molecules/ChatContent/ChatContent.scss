@@ -31,6 +31,8 @@
   &__message-item {
     display: flex;
 
+    gap: 16px;
+
     &--income {
       justify-content: flex-start;
     }

@@ -2,7 +2,7 @@ import { dialogs } from '@/mocks/dialogs';
 import { Sidebar } from './components/organisms/Sidebar';
 import { Chat } from './components/organisms/Chat';
 
-import { useNavigate } from 'react-router';
+import { Route, Routes, useNavigate } from 'react-router';
 
 function App() {
   const navigate = useNavigate();
@@ -14,7 +14,10 @@ function App() {
   return (
     <>
       <Sidebar dialogs={dialogs} onClickDialog={handleClickDialog} />
-      <Chat />
+
+      <Routes>
+        <Route path="/chat/:id" element={<Chat />} />
+      </Routes>
     </>
   );
 }
