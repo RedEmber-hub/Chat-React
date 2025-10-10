@@ -10,14 +10,7 @@ export const messages: Record<number, MessageInterface[]> = {
       created_at: '10:00',
       income: true,
       status: 'check',
-      attachments: [
-        {
-          id: 1,
-          file_name: 'котик',
-          attachment_url: 'https://placekitten.com/200/300',
-          mime_type: 'image/jpeg',
-        },
-      ],
+      attachments: [],
     },
     {
       id: 2,
@@ -47,14 +40,7 @@ export const messages: Record<number, MessageInterface[]> = {
       created_at: '11:15',
       income: false,
       status: 'read',
-      attachments: [
-        {
-          id: 1,
-          file_name: 'документ.pdf',
-          attachment_url: 'https://example.com/files/document.pdf',
-          mime_type: 'application/pdf',
-        },
-      ],
+      attachments: [],
     },
     {
       id: 4,
@@ -76,12 +62,13 @@ export const messages: Record<number, MessageInterface[]> = {
       message: 'Смотри, какой смешной мем я нашёл!',
       created_at: '09:45',
       income: true,
-      status: 'check',
+      status: 'read',
       attachments: [
         {
           id: 1,
           file_name: 'мем.jpg',
-          attachment_url: 'https://i.imgur.com/abcd123.jpg',
+          attachment_url:
+            'https://play-lh.googleusercontent.com/SzdvifkDT3UFAIgyJBRoB0D5iZmwUQ_QQkdKLLObKEplQKvS3T4NA3byMrMB1HAaLlU=w240-h480-rw',
           mime_type: 'image/jpeg',
         },
       ],
@@ -159,7 +146,7 @@ export const messages: Record<number, MessageInterface[]> = {
         {
           id: 1,
           file_name: 'agenda.docx',
-          attachment_url: 'https://example.com/files/agenda.docx',
+          attachment_url: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Agenda.jpg',
           mime_type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         },
       ],

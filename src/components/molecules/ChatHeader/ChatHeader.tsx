@@ -2,22 +2,29 @@ import { Avatar } from '@/components/atoms/Avatar';
 import { Button } from '@/components/atoms/Button';
 import { ChatHeaderProps } from './ChatHeader.type';
 import './ChatHeader.scss';
+import { useParams } from 'react-router';
+import { dialogs } from '@/mocks/dialogs';
 
-export default function ChatHeader({ avatarUrl, senderName }: ChatHeaderProps) {
+export default function ChatHeader() {
+  // Получаем id чата из параметров URL для отображения отправителя
+  const { id } = useParams();
+
+  const currentDialog = dialogs.find((dialog) => dialog.id === Number(id));
+
   return (
     <div className="chat__header">
       <div className="chat__header-avatar">
         {/* <!-- аватар компонент --> */}
-        <Avatar src={avatarUrl} user_name={senderName} size="s" />
+        {currentDialog && <Avatar src={currentDialog.avatar_url} user_name={currentDialog.sender_name} size="s" />}
       </div>
 
       <div className="chat__header-info">
         <div className="chat__header-info-title-subtitle">
           {/* <!-- название чата --> */}
-          <span className="text-main text-main--bold black">{senderName}</span>
+          <span className="text-main text-main--bold black">{currentDialog ? currentDialog.sender_name : ''}</span>
 
           {/* <!-- статус --> */}
-          {/* <span className="text icon">в сети 5 мин назад</span> */}
+          <span className="text icon">в сети 5 мин назад</span>
         </div>
       </div>
 
