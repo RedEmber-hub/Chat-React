@@ -3,6 +3,7 @@ import './Message.scss';
 import { MessageProps } from './Message.types';
 import classNames from 'classnames';
 import { Icon } from '../Icon';
+import { dateTimeFormat } from '@/utils/dateTimeFormat';
 
 export default function Message({ messageProp }: MessageProps) {
   const className = classNames({
@@ -11,7 +12,7 @@ export default function Message({ messageProp }: MessageProps) {
     ['message--outcome']: !messageProp.income,
   });
 
-  // Record<key, value>
+  // Record<key, value> = «объект, у которого ключи и значения могут быть только check или read», т.е. это типовая гарантия безопасности для объекта.
   const statusMap: Record<StatusType, StatusType> = {
     check: 'check',
     read: 'read',
@@ -30,7 +31,7 @@ export default function Message({ messageProp }: MessageProps) {
 
       <div className="message__footer">
         <div className="message__time">
-          <time className="caption">{messageProp.created_at}</time>
+          <time className="caption">{dateTimeFormat(messageProp.created_at)}</time>
         </div>
 
         <div className="message__status">

@@ -3,18 +3,15 @@ import { Badge } from '@/components/atoms/Badge';
 import { DialogProps } from './Dialog.types';
 
 import './Dialog.scss';
-import { formatDateTime } from '@/utils/dateTimeFormat';
+import { dateTimeFormat } from '@/utils/dateTimeFormat';
 import { Icon } from '@/components/atoms/Icon';
 import classNames from 'classnames';
-import { useMatch } from 'react-router';
 
-export default function Dialog({ dialogProp, isLoading, onClick }: DialogProps) {
-  const match = useMatch('/chat/:id');
-
+export default function Dialog({ dialogProp, isActive, isLoading, onClick }: DialogProps) {
   const className = classNames({
     dialog: true,
     'cursor-pointer': true,
-    'dialog--active': String(dialogProp.id) === match?.params?.id,
+    'dialog--active': isActive,
   });
 
   return (
@@ -42,7 +39,7 @@ export default function Dialog({ dialogProp, isLoading, onClick }: DialogProps) 
             <div className="dialog__header">
               <div className="dialog__title-icon">
                 <div className="dialog__title">
-                  <span className="text-main text-main--bold black">{dialogProp.sender_name}</span>
+                  <p className="text-main text-main--bold black text-truncated">{dialogProp.sender_name}</p>
                 </div>
 
                 {dialogProp.is_verified && (
@@ -53,7 +50,7 @@ export default function Dialog({ dialogProp, isLoading, onClick }: DialogProps) 
               </div>
 
               <div className="dialog__time">
-                <time className="caption icon">{formatDateTime(dialogProp.last_updated_at)}</time>
+                <time className="caption icon">{dateTimeFormat(dialogProp.last_updated_at)}</time>
               </div>
             </div>
 

@@ -6,8 +6,11 @@ import { Dialog } from '@/components/molecules/Dialog';
 import { useMemo, useState } from 'react';
 import classNames from 'classnames';
 import { Icon } from '@/components/atoms/Icon';
+import { useParams } from 'react-router';
 
 export default function Sidebar({ dialogs, onClickDialog }: SidebarProps) {
+  const { id } = useParams();
+
   // переключатель
   const [isMinimize, setIsMinimize] = useState(false);
   // поиск или фильтрация по имени
@@ -48,7 +51,9 @@ export default function Sidebar({ dialogs, onClickDialog }: SidebarProps) {
 
       <div className="dialog-list">
         {filteredDialogs.map((dialog) => {
-          return <Dialog dialogProp={dialog} key={dialog.id} onClick={onClickDialog} />;
+          return (
+            <Dialog dialogProp={dialog} key={dialog.id} onClick={onClickDialog} isActive={Number(id) === dialog.id} />
+          );
         })}
       </div>
     </aside>

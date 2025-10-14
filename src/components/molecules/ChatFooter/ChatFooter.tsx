@@ -2,8 +2,27 @@ import { Button } from '@/components/atoms/Button';
 import { InputField } from '@/components/atoms/InputField';
 
 import './ChatFooter.scss';
+import { useState } from 'react';
+import { ChatFooterProps } from './ChatFooter.type';
 
-export default function ChatFooter() {
+export default function ChatFooter({ onSend }: ChatFooterProps) {
+  const [messageText, setMessageText] = useState('');
+
+  function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === 'Enter') {
+      handleSendMessage();
+    }
+  }
+
+  function handleSendMessage() {
+    const trimmedMessage = messageText.trim();
+
+    if (trimmedMessage === '') return;
+
+    onSend(trimmedMessage);
+    setMessageText('');
+  }
+
   return (
     <div className="chat__footer">
       <InputField size="m" color="primary">
@@ -11,10 +30,15 @@ export default function ChatFooter() {
           <Button size="s" icon="emoji-icon" />
         </InputField.Slot>
 
-        <InputField.Field placeholder="Напишите сообщение" />
+        <InputField.Field
+          placeholder="Напишите сообщение"
+          onChangeValue={setMessageText}
+          value={messageText}
+          onKeyDown={handleKeyDown}
+        />
 
         <InputField.Slot>
-          <Button size="s" icon="send-icon" />
+          <Button size="s" icon="send-icon" onClick={handleSendMessage} />
         </InputField.Slot>
       </InputField>
     </div>

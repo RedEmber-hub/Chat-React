@@ -4,6 +4,6 @@ export interface AvatarProps {
   src?: string;
   user_name?: string;
   size?: ElementSize;
-  // key?: value - ? = необязательное поле (опциональное)
+  // универсальный тип для любого содержимого, которое React умеет рендерить (JSX, строки, числа, массивы, фрагменты, null и т.д.).
   children?: React.ReactNode;
 }

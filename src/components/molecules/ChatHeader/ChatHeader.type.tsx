@@ -1,4 +1,5 @@
+import { DialogInterface } from '@/types/models/Dialog';
+
 export interface ChatHeaderProps {
-  avatarUrl: string;
-  senderName: string;
+  dialog: DialogInterface;
 }

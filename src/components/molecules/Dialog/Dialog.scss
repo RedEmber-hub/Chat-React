@@ -55,6 +55,10 @@
     gap: 4px;
   }
 
+  &__title {
+    max-width: 169px;
+  }
+
   &__icon {
     display: flex;
   }

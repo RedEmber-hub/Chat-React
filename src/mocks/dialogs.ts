@@ -12,7 +12,7 @@ export const dialogs: DialogInterface[] = [
   },
   {
     id: 2,
-    avatar_url: 'https://i.pinimg.com/736x/50/03/3b/50033bac49f341a161c455281d636bb1.jpg',
+    avatar_url: '',
     sender_name: 'Мария',
     last_message: 'Созвонимся вечером?',
     is_verified: false,
