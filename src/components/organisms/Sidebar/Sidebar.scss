@@ -8,6 +8,7 @@
 
   transition: all var(--transition-speed) var(--transition-function);
 
+  position: relative;
   &__search {
     width: 100%;
     margin-left: 16px;

@@ -2,15 +2,9 @@ import { Avatar } from '@/components/atoms/Avatar';
 import { Button } from '@/components/atoms/Button';
 import { ChatHeaderProps } from './ChatHeader.type';
 import './ChatHeader.scss';
-// import { useParams } from 'react-router';
-// import { dialogs } from '@/mocks/dialogs';
 
 export default function ChatHeader({ dialog }: ChatHeaderProps) {
-  // // Получаем id чата из параметров URL для отображения отправителя
-  // const { id } = useParams();
-
-  // const currentDialog = dialogs.find((dialog) => dialog.id === Number(id));
-
+  // проверка на наличие диалога в props
   const hasDialog = dialog && Object.keys(dialog).length > 0;
 
   return (

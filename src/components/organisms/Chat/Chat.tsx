@@ -43,7 +43,7 @@ export default function Chat() {
     }, 1000);
   }, []);
 
-  const currentDialog = useMemo(() => dialogs.find((dialog) => dialog.id === Number(id)), [dialogs]);
+  const currentDialog = useMemo(() => dialogs.find((dialog) => dialog.id === Number(id)), [dialogs, id]);
   const messageById = useMemo(() => messages[Number(id)] || [], [messages, id]);
 
   return (

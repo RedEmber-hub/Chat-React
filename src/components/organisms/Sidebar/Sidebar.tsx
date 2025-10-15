@@ -7,6 +7,7 @@ import { useMemo, useState } from 'react';
 import classNames from 'classnames';
 import { Icon } from '@/components/atoms/Icon';
 import { useParams } from 'react-router';
+import { Panel } from '../Panel';
 
 export default function Sidebar({ dialogs, onClickDialog }: SidebarProps) {
   const { id } = useParams();
@@ -15,6 +16,9 @@ export default function Sidebar({ dialogs, onClickDialog }: SidebarProps) {
   const [isMinimize, setIsMinimize] = useState(false);
   // поиск или фильтрация по имени
   const [search, setSearch] = useState('');
+
+  // показывать панель, если что-то введено в поиск
+  const showPanel = search.length > 0;
 
   const filteredDialogs = useMemo(() => {
     return dialogs.filter((dialog) => {
@@ -45,12 +49,25 @@ export default function Sidebar({ dialogs, onClickDialog }: SidebarProps) {
             </InputField.Slot>
 
             <InputField.Field placeholder="Поиск" value={search} onChangeValue={setSearch} />
+
+            {showPanel && (
+              <Panel>
+                {filteredDialogs.map((dialog) => (
+                  <Dialog
+                    key={dialog.id}
+                    dialogProp={dialog}
+                    onClick={onClickDialog}
+                    isActive={Number(id) === dialog.id}
+                  />
+                ))}
+              </Panel>
+            )}
           </InputField>
         </div>
       </div>
 
       <div className="dialog-list">
-        {filteredDialogs.map((dialog) => {
+        {dialogs.map((dialog) => {
           return (
             <Dialog dialogProp={dialog} key={dialog.id} onClick={onClickDialog} isActive={Number(id) === dialog.id} />
           );
