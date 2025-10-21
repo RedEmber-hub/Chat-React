@@ -1,0 +1,11 @@
+.panel {
+  min-height: 32px;
+  width: 100%;
+  padding: 4px;
+
+  border-radius: 4px;
+
+  background-color: var(--color-white);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

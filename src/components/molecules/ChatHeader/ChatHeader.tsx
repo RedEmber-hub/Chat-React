@@ -3,17 +3,16 @@ import { Button } from '@/components/atoms/Button';
 import { ChatHeaderProps } from './ChatHeader.type';
 import './ChatHeader.scss';
 
-export default function ChatHeader({ dialog }: ChatHeaderProps) {
+export default function ChatHeader({ dialog, onClick }: ChatHeaderProps) {
   // проверка на наличие диалога в props
   const hasDialog = dialog && Object.keys(dialog).length > 0;
 
   return (
-    <div className="chat__header">
+    <div className="chat__header" onClick={onClick}>
       <div className="chat__header-avatar">
         {/* <!-- аватар компонент --> */}
         {hasDialog ? <Avatar src={dialog.avatar_url} user_name={dialog.sender_name} size="s" /> : <h1>Аватарка</h1>}
       </div>
-
       <div className="chat__header-info">
         <div className="chat__header-info-title-subtitle">
           {/* <!-- название чата --> */}
@@ -24,9 +23,10 @@ export default function ChatHeader({ dialog }: ChatHeaderProps) {
         </div>
       </div>
 
-      <div className="chat__header-actions">
+      {/* onClick={(event) => event.stopPropagation()} перехватывает родительский клик и отменяет его (на кнопочках короче не работает событие клика шапки) */}
+      <div className="chat__header-actions" onClick={(event) => event.stopPropagation()}>
         {/* <!-- кнопка поиска --> */}
-        <Button size="s" icon="search" />
+        <Button size="s" icon="search" onClick={() => alert('1')} />
 
         {/* <!-- кнопка вызова --> */}
         <Button size="s" icon="call-icon" />

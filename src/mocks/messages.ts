@@ -22,7 +22,58 @@ export const messages: Record<number, MessageInterface[]> = {
       status: 'check',
       attachments: [
         {
-          id: 2,
+          id: 2661215,
+          file_name: 'пейзаж',
+          attachment_url: 'https://picsum.photos/200/300',
+          mime_type: 'image/jpeg',
+        },
+      ],
+    },
+    {
+      id: 3,
+      dialog_id: 1,
+      sender_name: 'Алексей',
+      message: 'Посмотри это фото.',
+      created_at: '2025-10-14T14:37:00Z',
+      income: true,
+      status: 'check',
+      attachments: [
+        {
+          id: 2235125125,
+          file_name: 'пейзаж',
+          attachment_url: 'https://picsum.photos/200/300',
+          mime_type: 'image/jpeg',
+        },
+      ],
+    },
+    {
+      id: 4,
+      dialog_id: 1,
+      sender_name: 'Алексей',
+      message: 'Посмотри это фото.',
+      created_at: '2025-10-14T14:37:00Z',
+      income: true,
+      status: 'check',
+      attachments: [
+        {
+          id: 21231233,
+          file_name: 'пейзаж',
+          attachment_url: 'https://picsum.photos/200/300',
+          mime_type: 'image/jpeg',
+        },
+      ],
+    },
+    {
+      id: 5,
+      dialog_id: 1,
+      sender_name: 'Алексей',
+      message: 'Посмотри это фото.',
+      created_at: '2025-10-14T14:37:00Z',
+      income: true,
+      status: 'check',
+      attachments: [
+        {
+          id: 24464,
           file_name: 'пейзаж',
           attachment_url: 'https://picsum.photos/200/300',
           mime_type: 'image/jpeg',
@@ -49,7 +100,7 @@ export const messages: Record<number, MessageInterface[]> = {
       status: 'check',
       attachments: [
         {
-          id: 2,
+          id: 28656,
           file_name: 'пейзаж',
           attachment_url: 'https://picsum.photos/200/300',
           mime_type: 'image/jpeg',
@@ -60,7 +111,7 @@ export const messages: Record<number, MessageInterface[]> = {
 
   2: [
     {
-      id: 3,
+      id: 375,
       dialog_id: 2,
       sender_name: 'Мария',
       message: 'Привет! Я отправила тебе документы.',
@@ -70,7 +121,7 @@ export const messages: Record<number, MessageInterface[]> = {
       attachments: [],
     },
     {
-      id: 4,
+      id: 1874,
       dialog_id: 2,
       sender_name: 'Мария',
       message: 'Проверь, пожалуйста, всё ли в порядке.',
@@ -83,7 +134,7 @@ export const messages: Record<number, MessageInterface[]> = {
 
   3: [
     {
-      id: 5,
+      id: 45565,
       dialog_id: 3,
       sender_name: 'Иван',
       message: 'Смотри, какой смешной мем я нашёл!',
@@ -92,7 +143,7 @@ export const messages: Record<number, MessageInterface[]> = {
       status: 'read',
       attachments: [
         {
-          id: 1,
+          id: 17897,
           file_name: 'мем.jpg',
           attachment_url:
             'https://play-lh.googleusercontent.com/SzdvifkDT3UFAIgyJBRoB0D5iZmwUQ_QQkdKLLObKEplQKvS3T4NA3byMrMB1HAaLlU=w240-h480-rw',
@@ -101,7 +152,41 @@ export const messages: Record<number, MessageInterface[]> = {
       ],
     },
     {
-      id: 6,
+      id: 2,
+      dialog_id: 1,
+      sender_name: 'Алексей',
+      message: 'Посмотри это фото.',
+      created_at: '2025-10-14T14:37:00Z',
+      income: true,
+      status: 'check',
+      attachments: [
+        {
+          id: 28441414215,
+          file_name: 'пейзаж',
+          attachment_url: 'https://picsum.photos/200/300',
+          mime_type: 'image/jpeg',
+        },
+      ],
+    },
+    {
+      id: 7472,
+      dialog_id: 1,
+      sender_name: 'Алексей',
+      message: 'Посмотри это фото.',
+      created_at: '2025-10-14T14:37:00Z',
+      income: true,
+      status: 'check',
+      attachments: [
+        {
+          id: 268445661215,
+          file_name: 'пейзаж',
+          attachment_url: 'https://picsum.photos/200/300',
+          mime_type: 'image/jpeg',
+        },
+      ],
+    },
+    {
+      id: 4866,
       dialog_id: 3,
       sender_name: 'Ольга',
       message: 'Хаха, действительно смешно!',
@@ -113,7 +198,7 @@ export const messages: Record<number, MessageInterface[]> = {
   ],
   4: [
     {
-      id: 7,
+      id: 984867,
       dialog_id: 4,
       sender_name: 'Carol',
       message: 'Here is a funny meme 😂',
@@ -122,7 +207,7 @@ export const messages: Record<number, MessageInterface[]> = {
       status: 'check',
       attachments: [
         {
-          id: 1,
+          id: 198,
           file_name: 'meme.jpg',
           attachment_url: 'https://i.imgur.com/abcd123.jpg',
           mime_type: 'image/jpeg',
@@ -130,7 +215,7 @@ export const messages: Record<number, MessageInterface[]> = {
       ],
     },
     {
-      id: 8,
+      id: 77778,
       dialog_id: 4,
       sender_name: 'Dave',
       message: 'LOL, that is hilarious!',
@@ -142,7 +227,7 @@ export const messages: Record<number, MessageInterface[]> = {
   ],
   5: [
     {
-      id: 9,
+      id: 8889,
       dialog_id: 5,
       sender_name: 'Eve',
       message: 'Can we have a quick call?',
@@ -152,7 +237,7 @@ export const messages: Record<number, MessageInterface[]> = {
       attachments: [],
     },
     {
-      id: 10,
+      id: 594510,
       dialog_id: 5,
       sender_name: 'Frank',
       message: 'Sure, give me 5 minutes.',
@@ -162,7 +247,7 @@ export const messages: Record<number, MessageInterface[]> = {
       attachments: [],
     },
     {
-      id: 11,
+      id: 515611,
       dialog_id: 5,
       sender_name: 'Eve',
       message: 'Here is the agenda for the meeting.',
@@ -171,10 +256,27 @@ export const messages: Record<number, MessageInterface[]> = {
       status: 'check',
       attachments: [
         {
-          id: 1,
+          id: 178,
           file_name: 'agenda.docx',
           attachment_url: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Agenda.jpg',
           mime_type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        },
+      ],
+    },
+    {
+      id: 2,
+      dialog_id: 1,
+      sender_name: 'Алексей',
+      message: 'Посмотри это фото.',
+      created_at: '2025-10-14T14:37:00Z',
+      income: true,
+      status: 'check',
+      attachments: [
+        {
+          id: 28441485215,
+          file_name: 'пейзаж',
+          attachment_url: 'https://picsum.photos/200/300',
+          mime_type: 'image/jpeg',
         },
       ],
     },

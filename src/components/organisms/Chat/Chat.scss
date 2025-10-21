@@ -1,8 +1,13 @@
 .chat {
   display: flex;
-  flex-direction: column;
 
   width: 100%;
 
   background-color: var(--color-secondary);
+
+  &__main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }

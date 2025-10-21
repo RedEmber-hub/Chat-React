@@ -9,6 +9,14 @@
   transition: all var(--transition-speed) var(--transition-function);
 
   position: relative;
+
+  &__panel {
+    position: absolute;
+    left: 72px;
+    top: 56px;
+    z-index: 10;
+  }
+
   &__search {
     width: 100%;
     margin-left: 16px;

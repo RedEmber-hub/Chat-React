@@ -39,30 +39,32 @@ export default function ChatContent({ messages }: ChatContentProps) {
   return (
     <div className="chat__content">
       <div className="chat__message-list">
-        {Object.entries(groupedMessages).map(([date, messages]) => (
-          // группа сообщений
-          <div key={date} className="chat__message-groups">
-            {/* дата сообщений */}
-            <div className="chat__message-group-date">
-              <Badge size="m" color="secondary" text={dateTimeFormat(date, 'ru-RU', { useTime: false })} />
+        {Object.entries(groupedMessages)
+          .reverse()
+          .map(([date, messages]) => (
+            // группа сообщений
+            <div key={date} className="chat__message-groups">
+              {/* дата сообщений */}
+              <div className="chat__message-group-date">
+                <Badge size="m" color="secondary" text={dateTimeFormat(date, 'ru-RU', { useTime: false })} />
+              </div>
+
+              {/* рендер сообщений в зависимости от id диалога (ключа) */}
+              {messages.map((message) => {
+                const className = classNames({
+                  'chat__message-item': true,
+                  'chat__message-item--income': message.income,
+                  'chat__message-item--outcome': !message.income,
+                });
+
+                return (
+                  <div key={message.id} className={className}>
+                    <Message messageProp={message} />
+                  </div>
+                );
+              })}
             </div>
-
-            {/* рендер сообщений в зависимости от id диалога (ключа) */}
-            {messages.map((message) => {
-              const className = classNames({
-                'chat__message-item': true,
-                'chat__message-item--income': message.income,
-                'chat__message-item--outcome': !message.income,
-              });
-
-              return (
-                <div key={message.id} className={className}>
-                  <Message messageProp={message} />
-                </div>
-              );
-            })}
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );

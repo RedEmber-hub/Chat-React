@@ -7,7 +7,7 @@ import { useMemo, useState } from 'react';
 import classNames from 'classnames';
 import { Icon } from '@/components/atoms/Icon';
 import { useParams } from 'react-router';
-import { Panel } from '../Panel';
+import { Panel } from '@/components/atoms/Panel';
 
 export default function Sidebar({ dialogs, onClickDialog }: SidebarProps) {
   const { id } = useParams();
@@ -38,10 +38,12 @@ export default function Sidebar({ dialogs, onClickDialog }: SidebarProps) {
   return (
     <aside className={className}>
       <div className="sidebar__actions">
+        {/* кнопка для сворачивания */}
         <div className="sidebar__minimized-button">
           <Button size="s" icon="minimize" onClick={toggleMinimize} />
         </div>
 
+        {/* инпут для поиска с фильтрацией */}
         <div className="sidebar__search">
           <InputField size="s" color="secondary">
             <InputField.Slot>
@@ -51,16 +53,22 @@ export default function Sidebar({ dialogs, onClickDialog }: SidebarProps) {
             <InputField.Field placeholder="Поиск" value={search} onChangeValue={setSearch} />
 
             {showPanel && (
-              <Panel>
-                {filteredDialogs.map((dialog) => (
-                  <Dialog
-                    key={dialog.id}
-                    dialogProp={dialog}
-                    onClick={onClickDialog}
-                    isActive={Number(id) === dialog.id}
-                  />
-                ))}
-              </Panel>
+              <div className="sidebar__panel">
+                <Panel>
+                  {filteredDialogs.length > 0 ? (
+                    filteredDialogs.map((dialog) => (
+                      <Dialog
+                        key={dialog.id}
+                        dialogProp={dialog}
+                        onClick={onClickDialog}
+                        isActive={Number(id) === dialog.id}
+                      />
+                    ))
+                  ) : (
+                    <span className="text icon">Ничего не найдено</span>
+                  )}
+                </Panel>
+              </div>
             )}
           </InputField>
         </div>
