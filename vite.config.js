@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-  base: '/chat/', // имя репозитория на GitHub
+  base: '/Chat-React/', // имя репозитория на GitHub
   plugins: [react()],
   resolve: {
     alias: {

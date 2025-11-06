@@ -4,7 +4,7 @@ import { IconProps } from './Icon.types';
 export default function Icon({ name, size = 24, color = 'currentColor' }: IconProps) {
   return (
     <ReactSVG
-      src={`/icons/${name}.svg`}
+      src={`${import.meta.env.BASE_URL}icons/${name}.svg`}
       beforeInjection={(svg) => {
         svg.setAttribute('width', size.toString());
         svg.setAttribute('height', size.toString());
