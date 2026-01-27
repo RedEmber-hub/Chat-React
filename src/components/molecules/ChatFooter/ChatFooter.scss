@@ -3,5 +3,12 @@
     height: 80px;
 
     padding: 0px 24px 24px 24px;
+    position: relative;
+  }
+
+  &__wrapper {
+    position: absolute;
+    bottom: 90px;
+    left: 25px;
   }
 }
