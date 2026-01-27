@@ -4,7 +4,7 @@ import { InputField } from '@/components/atoms/InputField';
 import './ChatFooter.scss';
 import { useState } from 'react';
 import { ChatFooterProps } from './ChatFooter.type';
-import EmojiPicker from 'emoji-picker-react';
+import EmojiPicker, { EmojiClickData } from 'emoji-picker-react';
 import { Panel } from '@/components/atoms/Panel';
 
 export default function ChatFooter({ onSend }: ChatFooterProps) {
@@ -26,19 +26,25 @@ export default function ChatFooter({ onSend }: ChatFooterProps) {
     setMessageText('');
   }
 
-  function handleEmojiPanel() {
+  function toggleEmojiPanel() {
     setEmojiVisible((value) => !value);
+  }
+
+  function handleEmojiClick(e: EmojiClickData) {
+    console.log(e);
+
+    setMessageText((value) => value + e.emoji);
   }
 
   return (
     <div className="chat__footer">
       <InputField size="m" color="primary">
         <InputField.Slot>
-          <Button size="s" icon="emoji-icon" onClick={handleEmojiPanel} />
+          <Button size="s" icon="emoji-icon" onClick={toggleEmojiPanel} />
           {isEmojiVisible && (
             <div className="chat__wrapper">
               <Panel>
-                <EmojiPicker onEmojiClick={(emojiObject) => console.log(emojiObject)} />
+                <EmojiPicker onEmojiClick={handleEmojiClick} />
               </Panel>
             </div>
           )}
