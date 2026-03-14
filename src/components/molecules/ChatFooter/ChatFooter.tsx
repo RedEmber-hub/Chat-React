@@ -27,13 +27,13 @@ export default function ChatFooter({ onSend }: ChatFooterProps) {
   }
 
   function toggleEmojiPanel() {
-    setEmojiVisible((value) => !value);
+    setEmojiVisible((EmojiPanel) => !EmojiPanel);
   }
 
   function handleEmojiClick(e: EmojiClickData) {
     console.log(e);
 
-    setMessageText((value) => value + e.emoji);
+    setMessageText((messageText) => messageText + e.emoji);
   }
 
   return (
